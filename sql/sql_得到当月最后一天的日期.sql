@@ -1,0 +1,1 @@
+ SELECT day(dateadd(ms,-3,DATEADD(mm, DATEDIFF(m,0,getdate())+1, 0)))
