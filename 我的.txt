@@ -1,0 +1,499 @@
+//获取select选中项的 自定义属性的 值    
+ var aa= $("#YeWuRen").find("option:selected").attr("bumen");
+//赋值
+ $("#depname").val(aa)
+------------------------------------------------
+js字母大小写转换方法：
+1、转换成大写：toUpperCase()
+2、转换成小写：toLowerCase()
+js 小写转化为大写 aa.toUpperCase()
+js 大写转化为小写 aa.toLowerCase()
+---------------------------------------------------
+//excel 里面查找 回车符 按着alt 再按小键盘的10 就是回车符
+
+--------------------------------------------------
+//隐藏父标签
+parentNode =$("#"+key).parent().hide();
+//显示父标签
+parentNode =$("#"+key).parent().show();
+----------------------------------------------------------------------
+
+----------------从一个服务器的数据库 连接另一个不同服务器的数据库--------------------
+exec sp_addlinkedserver   'ITSV ', ' ', 'SQLOLEDB ', '123.56.146.71,14589' 
+exec sp_addlinkedsrvlogin  'ITSV ', 'false ',null, 'db_dbs_yuanjie', '1z2se9u8f0x3a9f7j3d4' 
+
+SELECT COUNT(*) FROM etest_zongbu..T_Customer_GerenProduct 
+SELECT COUNT(*) FROM ITSV.etest_zongbu.dbo.T_Customer_GerenProduct
+-----------------------------------------------------------------
+
+
+<div id="zc_qiye"  style="display:inline">//表格里面  一行显示
+<div id="zc_geren"  style="display:none">
+-4---------------------------------------------------------------------------------------------------------
+	//获取 id为“showdata” 第二行 的  name = “guojiefei” 的input 的值
+	//var _array = $("#showdata").find("tr:eq(1)").find("input[name='guojiefei']").val()
+	//获取 id为“showdata”  第二行 的  in = “t” 的input 的值	
+      //var _array = $("#showdata").find("tr:eq(1)").find("input[in='t']").val()
+-3---------js----------------------------------------------------------------------------------------------
+ timer= setInterval('ss()', 1000);//每一秒执行一次函数
+ clearInterval(timer);//停止计时器
+=============================================================================
+-2、//为mainFrame 框架  加载的页面添加 js文件 
+ var jsCode2 = window.parent.frames["mainFrame"].document.createElement('script'); 
+         jsCode2.setAttribute('src', '/dbs/js/jquery-1.8.3.min.js');
+         window.parent.frames['mainFrame'].document.body.appendChild(jsCode2);
+===========================================================================
+-1、//刷新 mainFrame 框架
+document.frames("mainFrame").location.reload()//刷新 mainFrame 框架
+=================================================================================
+0、页面加载完毕执行
+$(document).ready(function(){ alert(33)})
+============================================================================
+1、视图里面尽可能不要出现*号。*号不仅对性能有影响，也不便于结构的更新。
+       
+ 2、无论视图所涉及的表结构有无修改，每次执行脚本后，刷新一下，总是好的。
+=============================================================================
+-----------------得到当前 数据库的所有视图的名称----方法
+SELECT DISTINCT  
+        'EXEC sp_refreshview ''' + name + ''''  
+FROM    sys.objects AS so  
+        INNER JOIN sys.sql_expression_dependencies AS sed ON so.object_id = sed.referencing_id  
+WHERE   so.type = 'V'  
+
+
+-----------------得到当前 数据库的所有视图的名称--------方法
+SELECT 'EXEC sys.sp_refreshview '''+name+'''' FROM sys.views
+===============================================================================
+
+--sql newid()随机函数
+
+===============================================================================
+
+ ---删除表里的数据 连自增字段一并删除了就 （自增字段下次从头开始）
+TRUNCATE TABLE  website_ejdbs.dbo.OnlineClickTotal
+
+===============================================================================
+
+ function Validate(){
+ph=$("#kehu_phone").val();//得到id为kehu_phone的值			
+ph=ph.replace(/(\d{11}(?!,))+/g,"$1,");//电话号码后加，号
+ph=ph.replace(/,$/g,"")		//去掉最后一个逗号
+$("#kehu_phone").val(ph);//重新为id为kehu_phone的控件赋值 如：3456789098，13567890987
+            }
+ 
+
+<script language=JavaScript>
+//个人事务管理（计算各个步骤的条数）
+function countshuliang()
+{     
+	$.ajax
+        ({  type: "get",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            url: "2015_lc_work/include/countshu.asp",  //这里是网址
+            success: function (data) {
+		  if (data.state ==1){
+                   for(var key in data)//循环设置 赋值（前提id 跟key 值一样）
+                     {
+                  if(data[key]!=0) 
+//比如key是一个字符串变量，如果需要取该变量的值，需要使用下面的语句：
+                    var a=$("#"+key).text(data[key]);//为span 赋值
+                  else
+		 { //去掉父标签
+		parentNode =$("#"+key).parent().remove();
+             		   
+		 }
+		 }	
+		} 
+		if (data.state ==0) {alert(data.errmsg);}
+           },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                  alert('页面异常,稍后重新操作！');  
+            }
+        });	   
+		}
+</script>
+countshu.asp  
+<!--#include file="../../inc/JSON_2.0.4.asp"-->
+Set Re_string = jsObject()
+Re_string("state")   = "0"
+Re_string("errmsg")  = ""'返回错误原因
+  
+Re_string.Flush
+Response.End()
+
+0》
+qiyeyuangong.openTo("20");  展开该id的树
+qiyeyuangong 树的名字 
+20 树的id
+
+qiyeyuangong.openAll();  全部展开该树
+
+===============================================================================
+
+1》
+asp
+on error resume next     '如果发生错误，则跨过，执行下一句
+2》
+HTML <td> 标签的 valign 属性  
+valign 属性规定单元格中内容的垂直排列方式
+3》 
+<div style="display:none"> ？啥意思
+隐藏改标签内的文本信息，不在页面中显示出来。但源代码中，仍然可以看的到隐藏的内容。一般用在 “选项卡”或者“焦点”图片 上面。还有一些习惯挂黑链的人，也喜欢用这个隐藏黑链。
+none隐藏，block和“”显示
+
+4》
+$('#mb').removeAttr("readonly");//取消只读
+$("#name").removeAttr("disabled"); //取消不可用
+$("#workdateyueex").removeAttr("onclick"); //设为取消onclick
+
+$("#workdateyueex").css("background-color","#E7E8E8");//设背景颜色
+$('#workdateyueex').attr("readonly","readonly");//设为只读
+$("#name").attr("disabled","disabled"); //设置为不可用 text   jquery禁用select和取消禁用
+
+$("#qiye").css("display", "none");  //设置div id=‘qiye’ 为不可见
+$("#geren").css("display", ""); //设置 div id=‘geren’ 为可见
+ 
+
+5》
+$.cookie("message_zdy",message_zdy,{ expires: 7});	//为cookie 赋值 保存7天
+6》
+禁止鼠标选中文字 用js可以在页面中写 onselectstart="return false" 
+
+onpaste="return false" 禁止粘贴
+7》
+盒子模型  pdm
+style="margin-left:40%" input 右移 
+
+
+8》
+form的enctype属性为编码方式，常用有两种:application/x-www-form-urlencoded和multipart/form-data，默认为application /x-www-form-urlencoded。
+
+9》
+<textarea name="textarea2" id="textarea2" cols="45" rows="5"></textarea>中"cols"和"rows"分别什么意思
+列和行的数目，可以理解为宽和高
+10》
+rs1.open sql,conn,1,1 
+表示以只读的方式打开 
+rs1.open sql,conn,1,3表示以可写的方式打开 
+ 
+如果你只是想查询一些数据，用1,1 
+如果想新增或是修改，删除，用1,3
+
+11》给数据库添加新的字段
+use etest_e_sy
+ALTER TABLE dbo.Lc_fenbushouju_shenqing
+ADD shouju_haoduan varchar(50) 
+
+12》Split()函数
+返回值数组 = Split("字符串","分割符")
+
+13》
+UBound函数 返回
+
+返回一个 Long 型数据，其值为指定的数组维可用的最大下标。
+14》
+WITH (NOLOCK)是干嘛用的？
+WITH（NOLOCK）作用是不考虑任何锁，可以提升一定性能，但会引起脏读，会包含未提交事务的数据。
+还是要看在合适场合下应用。
+
+
+
+15》触发器的工作原理？
+主要有两点:
+1、触发器实际上是可以自动执行的存储过程，自动执行的依据是捕获能够改变数据的命令(又称DML)，包括insert、delete和update;有的数据库服务器的捕获时机设置得更多，支持修改前和修改后捕获，而通常是修改后捕获。
+2、数据库中执行单位是事务，触发器的具体操作将与引发它的语句处于同一事务，如此，在触发器中对事务执行rollback，效果上能起到禁止改变数据的作用。
+
+16》   更改frame id为topFrame 的src地址	
+js  代码
+top.frames.topFrame.location.href="top_new_zongbu.asp"
+
+
+17》  刷新 frame  id为topFrame 框架
+js  代码
+top.frames.topFrame.location.reload();
+18》
+获取 select  id为selectArea  的被选中的的value值
+jQuery 代码
+方法1：
+$("#selectArea option:selected").val() 
+方法2：
+$("#selectArea").val()
+19》
+<frameset rows="119,*,99" cols="*">是什么意思？
+这是进行框架划分，
+rows表示划分的行
+cols是之划分的列，
+rows="119,*,99"表示把页面分为3行，其中第一行的宽度是119，第三行的宽度是99，中间一行的宽度为剩余宽度
+如果rows="119,90,*,99"表示把页面分为4行,其中第一行的宽度是119，第二行为90，第四行的宽度是99，第三行的宽度为剩余宽度
+列的道理是一样的
+cols="*"的意思应该是不划分列，即页面一列
+20》innerText 与 innerHTML 的区别
+innerText属性用来定义对象所要输出的文本，在本例中innerText把对象DT中的文本“您好吗?”变成了“我很好!”
+（语句DT.innerText="我很好!"）。
+而对对象DH的改变用了innerHTML属性，它除了有innerText的作用外，还可改变对象DH内部的HTML语句，于是它把文本变成了“我姓肖!”，而且文本输出改成了斜体（<i></i>）并下加一条直线（<u></u>），即
+语句DH.innerHTML="<i><u>我姓肖!</u></i>"。
+21》
+DATEPART     返回表示指定日期的指定日期部分的整数。
+DAY               返回一个整数，表示指定日期的天datepart 部分
+MONTH         返回一个整数，表示指定日期的天datepart 部分
+YEAR              返回表示指定日期的“年”部分的整数。
+
+
+DATEADD      返回给指定日期加上一个时间间隔后的新datetime 值
+DATEDIFF      返回跨两个指定日期的日期边界数和时间边界数
+22》
+CONVERT(varchar(6) ,'2015-5-5', 120)   转换为2015-5
+CONVERT(varchar(7) ,getdate(), 120) 转换为2015-10
+
+
+23》jquery 判断是否为数字
+isNaN() 函数通常用于检测 parseFloat() 和 parseInt() 的结果，以判断它们表示的是否是合法的数字。当然也可以用 isNaN() 函数来检测算数错误，比如用 0 作除数的情况。
+检查数字是否非法：
+<script>
+
+document.write(isNaN(123));
+document.write(isNaN(-1.23));
+document.write(isNaN(5-2));
+document.write(isNaN(0));
+document.write(isNaN("Hello"));
+document.write(isNaN("2005/12/12"));
+
+</script>
+
+输出：
+false
+false
+false
+false
+true
+true
+
+24》jQuery trim() 方法去掉字符串的前后空格 
+这个是所有浏览器都支持的. $.trim()
+25》数据库自带函数 OBJECT_ID('admin') ---返回数据库对象标识号
+26》
+如何在update语句中实现左连接
+
+UPDATE tb1
+SET tb1.fld1=tb2.fld2
+FROM tb1
+LEFT JOIN tb2
+ON tb1.KeyFld=tb2.KeyFld
+27》
+该文章讲述了sql判断字段不为空的语句.
+select   *   from   表名   where   字段名   is   null
+select   *   from   表名   where   字段名   is  not  null
+
+28》
+
+---------------------修改存储过程的名字----------------------
+EXEC sp_rename 'proc_2015_geren_update_LC_yinandangan', --旧名
+ 'proc_2015_geren_update_LC_renshi_yinandangan' --新名
+ ------------------删除存储过程---------------------------------
+DROP PROCEDURE   proc_2015_geren_update_LC_shouruzhengming
+ 
+DROP PROCEDURE  proc_2015_geren_update_LC_kaijufapiao
+
+29》
+sql CHARINDEX（charindex）小写 函数
+CHARINDEX函数返回一个整数，返回的整数是要找的字符串在被找的字符串中的位置。假如CHARINDEX没有找到要找的字符串，那么函数整数“0”。让我们看看下面的函数命令执行的结果：
+      CHARINDEX('SQL', 'Microsoft SQL Server')
+这个函数命令将返回在“Microsoft SQL Server”中“SQL”的起始位置，在这个例子中，CHARINDEX函数将返回“S”在“Microsoft SQL Server”中的位置11。
+
+30》
+sql  left函数
+
+
+从字符表达式最左边一个字符开始返回指定数目的字符。
+语法
+
+LEFT(cExpression, nExpression)
+
+参数
+
+cExpression
+
+指定字符表达式，LEFT( ) 函数从中返回字符。
+
+nExpression
+
+指定从字符表达式中返回的字符个数。若 nExpression 的值大于 cExpression 的长度，则返回字符表达式的全部字符。如果 nExpression 为负值或 0，则返回空字符串。
+LEFT( ) 函数与起始位置为 1 的 SUBSTR( ) 函数是等价的。
+31》
+css 
+
+在html 标签前面写这个  <!DOCTYPE html>
+32》
+css
+
+一般而言，所有的样式会根据下面的规则层叠于一个新的虚拟样式表中，其中数字 4 拥有最高的优先权。
+浏览器缺省设置
+外部样式表
+内部样式表（位于 <head> 标签内部）
+内联样式（在 HTML 元素内部）
+
+33》css
+panel 
+
+div 设置的隐藏 有些浏览器不兼容
+
+可以使用 tr 设置隐藏 
+34》sql
+DECLARE CS CURSOR 是声明游标，for后面跟一个查询语句
+34》
+sql语法：inner join on, left join on, right join on详细使用方法
+inner join(等值连接) 只返回两个表中联结字段相等的行
+left join(左联接) 返回包括左表中的所有记录和右表中联结字段相等的记录
+right join(右联接) 返回包括右表中的所有记录和左表中联结字段相等的记录
+35》
+select * from a，b where a.id=b.id            ---等值连接 
+select * from a inner join b on a.id = b.id   -----内连接 
+内连接与等值连接效果是相同的，执行效率也是一样的。
+36》添加删除表字段
+------------删除一列--------------------------
+ALTER TABLE [dbo].[2015_lc_gerenwork]
+DROP COLUMN ProductID
+-------------添加一列------------------------
+ALTER TABLE [dbo].[2015_lc_gerenwork]
+ADD ProductID VARCHAR(50) NULL
+
+37》
+插入的时候：
+取消自增标识（sql）
+SET IDENTITY_INSERT  etest..lc_bokuan ON
+{
+INSERT 代码
+}
+SET IDENTITY_INSERT etest..lc_bokuan OFF
+
+38》
+sql 里面的if else 例子：
+if （条件）
+begin
+（程序块）
+end
+else if（条件）
+begin
+（程序块）
+end
+else
+begin
+（程序块）
+end
+
+39》
+$("[name='a']").removeAttr("href"); 
+将 name=‘a’的标签去掉 超连接
+$("a").removeAttr("href");
+去掉所有<a href='fffgfgfdff.asp'></a>
+的超连接
+
+40》
+jquery
+product=$(this).parent(); //先获取父级元素 
+product.attr("id");//得到id的值
+name.substring(0,2); 
+name.substring(0,2);//上面的0是name的起始位置(包括),2是结束位置(不包括)举个例子:
+String name = "1234567890";String tmpStr = name.substring(0,2);
+String tmpStr1 = name.substring(4,8);则tmpStr = "12";tmpStr1 = "5678"
+
+product.fadeOut(500, function() {
+		product.remove();
+	});
+
+Jquery中fadeOut用法：通过不透明度的变化来实现所有匹配元素的淡出效果，并在动画完成后可选地触发一个回调函数。
+这个动画只调整元素的不透明度，也就是说所有匹配的元素的高度和宽度不会发生变化。
+
+41》
+//模块的关闭和展开功能
+function toggleDiv(_this) {
+	//获取当前需要关闭元素的父元素
+	var _hiddenTB = $(_this).parent().parent().parent();
+	//根据父元素查找需要关闭的区域
+	$(_hiddenTB).find("#modu").toggle();
+	$(_hiddenTB).find("#moduk").toggle();
+	$(_hiddenTB).find("#modukDi").toggle();
+}
+
+42》
+1.选择器
+(1)通配符：
+  $("input[id^='code']");//id属性以code开始的所有input标签
+  $("input[id$='code']");//id属性以code结束的所有input标签
+  $("input[id*='code']");//id属性包含code的所有input标签
+(2)根据索引选择
+  $("tbody tr:even"); //选择索引为偶数的所有tr标签
+  $("tbody tr:odd"); //选择索引为奇数的所有tr标签
+(3)获得jqueryObj下一级节点的input个数
+  jqueryObj.children("input").length;
+(4)获得class为main的标签的子节点下所有<a>标签
+  $(".main > a");
+(5)选择紧邻标签
+  jqueryObj.next("div");//获取jqueryObj标签的后面紧邻的一个div，nextAll获取所有
+ 
+2.筛选器  
+//not
+  $("#code input:not([id^='code'])");//id为code标签内不包含id以code开始的所有input标签
+ 
+3.事件
+//处理文本框上的键盘操作
+jqueryObj.keyup(function(event){
+var keyCode = event.which;//获取当前按下键盘的键值，回车键为13
+}
+ 
+4.工具函数
+$('#someField').val($.trim($('#someField').val()));//消除空格，语法：$.trim(value)
+
+43》
+@@rowcount是什么意思？
+
+在你更新/删除/插入或查找数据的语句后，这个变量保存了你操作所影响的行数
+44》
+关键在于Inserted表
+触发器语句中使用了两种特殊的表：deleted 表和 inserted 表。
+Deleted 表用于存储 DELETE 和 UPDATE 语句所影响的行的复本。在执行 DELETE 或 UPDATE 语句时，行从触发器表中删除，并传输到 deleted 表中。Deleted 表和触发器表通常没有相同的行。
+
+Inserted 表用于存储 INSERT 和 UPDATE 语句所影响的行的副本。在一个插入或更新事务处理中，新建行被同时添加到 inserted 表和触发器表中。Inserted 表中的行是触发器表中新行的副本。
+
+1.插入操作（Insert） 
+Inserted表有数据，Deleted表无数据 
+
+2.删除操作（Delete） 
+Inserted表无数据，Deleted表有数据 
+
+3.更新操作（Update） 
+Inserted表有数据（新数据），Deleted表有数据（旧数据）
+45》sql  merge 语法
+merge targettable as t
+using sourcetable as s
+on t.id=s.id
+when matched--当上面的t.id=s.id 时，目标表中的数据更新
+then update set t.dd=s.dd
+when not matched--目标表中没有的id，在源表中有，则插入相关数据
+then insert values(s.id,s.dd)
+when not matched by source--目标表中存在，源源表中不存在，则删除
+then delete
+46》FULL JOIN 关键字会从左表 (Persons) 和右表 (Orders) 那里返回所有的行。
+
+47》 asp 显示小数点前面的0  
+<%       ‘利用 FormatNumber 函数把数值格式化为小数点前面有0
+dim Pay
+Pay=0.5
+response.write FormatNumber(Pay,1,-1)
+%>
+显示结果：0.5
+48》
+存储过程 SET NOCOUNT ON：
+
+当 SET NOCOUNT 为 ON 时，不返回计数（表示受 Transact-SQL 语句影响的行数）。当 SET NOCOUNT 为 OFF 时，返回计数。
+
+如果存储过程中包含的一些语句并不返回许多实际的数据，则该设置由于大量减少了网络流量，因此可显著提高性能。
+
+
+
+
+
+
+
+
