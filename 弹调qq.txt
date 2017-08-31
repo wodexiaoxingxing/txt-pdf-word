@@ -1,0 +1,44 @@
+----бљЪН
+<style type="text/css">
+ 
+ .bot{
+   
+   width: 100%;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   overflow: hidden;
+   z-index: 9999999;
+  }
+ 
+ .bot img{
+   width: 100%;
+   display: block;
+  }
+ 
+ .tc{
+   width: 26%;
+   left: 50%;
+  }
+  
+.bot a{
+   display: block;
+   float: left;
+   height: 200px;
+   position: absolute;
+   top: 0;
+  }
+ </style>
+
+
+---ДњТы
+<div class="bot">
+ 
+< img src="http://www.hezongli.com/nanianqingchunkaoyu/kaoyuwap/wapluodi/images/car2.jpg" alt="">
+ 
+< a href=" " style="left: 0;"></ a>
+ < a href="http://wpa.qq.com/msgrd?v=3&uin=754245937&site=qq&menu=yes" class="tc" style="width: 26%;left: 50%;"></ a>
+
+ < a href="http://lzt.zoosnet.net/LR/Chatpre.aspx?id=LZT10737588&lng=cn " style="right: 0;width: 24%;"></ a>
+
+</div>
