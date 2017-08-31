@@ -1,0 +1,54 @@
+1¡ª¡ª8
+a-b=1;c+d=9;e-f=2;g+h=7
+
+
+List<int> arr = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8 };
+List<int> indexs = new List<int>();
+
+void  getint()
+        {
+            for (int i = 0; i < arr.Count; i++)
+            {
+
+                if (indexs.Count == 2 && arr[indexs[1 - 1]] - arr[indexs[2 - 1]] != 1)
+                {
+                    continue;
+                }
+                if (indexs.Count == 4 && arr[indexs[3 - 1]] + arr[indexs[4 - 1]] != 9)
+                {
+                    continue;
+                }
+                if (indexs.Count == 6 && arr[indexs[5 - 1]] - arr[indexs[6 - 1]] != 2)
+                {
+                    continue;
+                }
+
+
+                if (indexs.Contains(i) )
+                {
+                    continue;
+                }
+                else
+                {
+                    indexs.Add(i);
+                }
+
+
+                if (indexs.Count == 8)
+                {
+                    for (int iis = 0; iis < indexs.Count; iis++)
+                    {
+                        textBox1.Text += arr[indexs[iis]] + ",";
+                    }
+                    textBox1.Text += "," + (arr[indexs[7]] + arr[indexs[6]]).ToString() + "\r\n";
+
+                }
+                else {
+                    getint();
+                }
+
+                indexs.Remove(i);
+                
+            }
+        }
+
