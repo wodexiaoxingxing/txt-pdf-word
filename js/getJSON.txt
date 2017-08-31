@@ -1,0 +1,13 @@
+$.getJSON("../include/geren_getSqlZhixing.asp?StepName="+FlowName+"&idStr="+CidStr+"&ExcuName="+ExcuName+"&Ext="+rwin+"&ErrIDStr="+ErrIDStr,function(data){
+							$(this).attr('disabled',true);
+						
+							if (data.state ==1){
+							RizhiSelec()
+								//alert(data.state);
+								//操作成功 刷新网页
+							} else {
+								
+								$(this).attr('disabled',false);
+								alert(data.errmsg);
+							}
+					   });	

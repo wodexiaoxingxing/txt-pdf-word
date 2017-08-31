@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script src="jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+//----声明一个时间类型，为其赋值
+/*
+    var d = new Date();
+    d.setFullYear(2017,1,1)
+    console.log(d);
+    alert(typeof d)
+*/
+  //
+  //  var a="2017-8-8"
+//字符串类型转换成时间类型的
+//然后返回一个字符串类型
+ function aa(dateStr,separator){
+    if(!separator){
+        separator="-";
+                 }
+    var dateArr = dateStr.split(separator);
+    var year = parseInt(dateArr[0]);
+    var month;
+//处理月份为04这样的情况
+    if(dateArr[1].indexOf("0") == 0){
+    month = parseInt(dateArr[1].substring(1));
+      }
+   else{
+    month = parseInt(dateArr[1]);
+      //  alert(month)
+      }
+var day = parseInt(dateArr[2]);
+var date = new Date(year+2,month-1 ,day);
+return date.toString();
+
+//console.log(s);
+}
+
+var shijian1="2017-10-7"
+var shijian2 =aa("2017-10-7","");
+
+if (shijian1<shijian2)
+{
+    alert("888")
+}
+else
+{
+    alert("999")
+}
+
+
+
+
+alert(stringToDate)
+</script>

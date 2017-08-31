@@ -1,0 +1,9 @@
+    function trim(str){ //É¾³ı×óÓÒÁ½¶ËµÄ¿Õ¸ñ
+        return str.replace(/(^\s*)|(\s*$)/g, "");
+    }
+    function ltrim(str){ //É¾³ı×ó±ßµÄ¿Õ¸ñ
+        return str.replace(/(^\s*)/g,"");
+    }
+    function rtrim(str){ //É¾³ıÓÒ±ßµÄ¿Õ¸ñ
+        return str.replace(/(\s*$)/g,"");
+    }

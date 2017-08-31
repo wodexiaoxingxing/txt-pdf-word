@@ -1,0 +1,41 @@
+输入：hh8uu99999  可以得到它： hh8uu  99999
+//截取 字符串数据(得到后面 的数字 )
+    function jiequ_zifuchuang_shuzi(str)
+    {
+       var str=rtrim(str)
+       // var str = 'rfgse5t4u78';
+        var newStr1 = "";
+        var newStr2 = "";
+        for (var i = str.length - 1; i >= 0; i--) {
+            if (Number(str.slice(i, i + 1)).toString() !== 'NaN') {
+                newStr1 += str.slice(i, i + 1);
+            } else {
+                var j = i;
+                break;
+            }
+        }
+        newStr1 = newStr1.split("").reverse().join("");
+        newStr2 = str.slice(0, j + 1);
+
+       return  newStr1;
+    }
+    //截取 字符串数据(得到前面的 的前缀 )
+    function jiequ_zifuchuang_qianzhui(str)
+    {
+
+        var str=rtrim(str)
+        // var str = 'rfgse5t4u78';
+        var newStr1 = "";
+        var newStr2 = "";
+        for (var i = str.length - 1; i >= 0; i--) {
+            if (Number(str.slice(i, i + 1)).toString() !== 'NaN') {
+                newStr1 += str.slice(i, i + 1);
+            } else {
+                var j = i;
+                break;
+            }
+        }
+        newStr1 = newStr1.split("").reverse().join("");
+        newStr2 = str.slice(0, j + 1);
+        return  newStr2.toUpperCase();
+    }

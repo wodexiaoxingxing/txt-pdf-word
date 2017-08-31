@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .mask {
+            position: absolute;
+            top: 0px;
+            filter: alpha(opacity=60);
+            background-color: #777;
+            z-index: 1002; left: 0px;
+            opacity:0.5; -moz-opacity:0.5;
+               }
+    </style>
+</head>
+<body>
+<div id="mask" class="mask" onclick="hideMask()"></div>
+<a href="javascript:;" onclick="showMask()" >╣Цнротй╬узуж╡Ц</a><br />
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+//отй╬узуж╡Ц   
+ function showMask(){   alert(22);
+        $("#mask").css("height",$(document).height());
+        $("#mask").css("width",$(document).width());
+        $("#mask").show();
+    }
+    //рЧ╡ьузуж╡Ц
+    function hideMask(){
+
+        $("#mask").hide();
+    }
+    
+</script>
+
+</body>
+</html>

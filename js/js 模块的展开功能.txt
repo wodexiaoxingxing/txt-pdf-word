@@ -1,0 +1,96 @@
+//模块的关闭和展开功能
+function toggleDiv(_this) {
+	//获取当前需要关闭元素的父元素
+	var _hiddenTB = $(_this).parent().parent().parent();
+	//根据父元素查找需要关闭的区域
+	$(_hiddenTB).find("#modu").toggle();
+	$(_hiddenTB).find("#moduk").toggle();
+	$(_hiddenTB).find("#modukDi").toggle();
+}
+
+
+<div class="tagTablB" onClick="toggleDiv(this)" >
+<div class="divline"></div>
+</div>
+ <div class="divBian"  id="modu"  style="display:block;">
+
+内容
+
+  </div>
+        <div id="moduk" style=" font-size:1px;height:8px; clear:both; display:block;"></div>
+        <div id="modukDi" style=" font-size:1px; clear:both; BORDER-TOP: #B0CACB 1px solid; display:none;"></div>
+
+--------------------------webstorm----写的例子----------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tagTablB {
+            height:22px;
+            width:150px;
+            background-color: #56c64a;
+            FONT-SIZE: 13px;
+            font-family:"宋体";
+            float: left;
+            clear: both;
+            background-repeat: no-repeat;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 8px;
+            text-align: left;
+            vertical-align: bottom;
+            cursor:pointer;
+                       }
+        .divBian{
+            BORDER-RIGHT: #B0CACB 1px solid;
+            BORDER-TOP: #B0CACB 1px solid;
+            BORDER-LEFT: #B0CACB 1px solid;
+            WIDTH: 98%;
+            BORDER-BOTTOM: #B0CACB 1px solid;
+            clear: both;
+            float: left;
+                    }
+    </style>
+</head>
+<body>
+<div class="tagTablB" onClick="toggleDiv(this)" >
+    <div class="divline"></div>
+</div>
+<div class="divBian"  id="modu"  style="display:block;">
+    内容1
+    <br>
+    内容2
+    <br>
+    内容3
+    <br>
+    内容4
+    <br>
+    内容5
+    <br>
+    内容6
+</div>
+<div id="moduk" style=" font-size:1px;height:8px; clear:both; display:block;"></div>
+<div id="modukDi" style=" font-size:1px; clear:both; BORDER-TOP: #B0CACB 1px solid;
+display:none;"></div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script src="jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+    //模块的关闭和展开功能
+    function toggleDiv(_this) {
+//alert(111)
+        //获取当前需要关闭元素的父元素
+        var _hiddenTB = $(_this).parent().parent().parent();
+       // alert(_hiddenTB)
+        //根据父元素查找需要关闭的区域
+        $(_hiddenTB).find("#modu").toggle();
+        $(_hiddenTB).find("#moduk").toggle();
+        $(_hiddenTB).find("#modukDi").toggle();
+    }
+
+</script>
